@@ -1,0 +1,48 @@
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+$font-primaria: "Fugaz One", sans-serif;
+$font-secundaria: "Open Sans", sans-serif;
+
+
+$cores: (
+  "white": #ffff,
+  "icon-logo": #3905F0,
+  "icon-bg": #262b44,
+  "body-bg": rgb(221, 221, 221),
+  "button-bg": #E2E8F0,
+
+  
+  "gray-title": #9a9da1,
+  "border-card": rgb(199, 199, 199),
+  "feedback-bg": rgba(220, 221, 248, 0.479),
+
+  "sucess": #28a745,
+  "error": #dc3545
+);
+
+@function color($nome) {
+  @return map.get($cores, $nome);
+}
+
+$sizes: (
+    "full": 100%,
+    "middle": 50%,
+    "content": 90%,
+    "max-content": 70rem,
+
+
+    "xs": 0.25rem,
+    "s": 0.5rem,
+    "m": 1rem,
+    "l": 1.5rem,
+    "xl": 2rem,
+    "xxl": 3rem
+
+);
+
+@function sizes($nome){
+    @return map.get($sizes, $nome);
+}

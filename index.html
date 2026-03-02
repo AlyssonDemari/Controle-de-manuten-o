@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Manutenção</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="scss/index.css">
+</head>
+<body>
+    <main>
+        <header class="header">
+            <i class=" header__icon fa-solid fa-screwdriver-wrench"></i>
+            <h1 class="header__title">Controle Completo de Manutenção</h1>
+        </header>
+
+        <aside class="control">
+            <div class="control__title">
+                <i class=" control__icon fa-solid fa-gauge-high"></i>
+                <p class="control__title-title">ODÔMETRO ATUAL</p>
+            </div>
+
+        <div class="control__status">
+            <div class="control__status-input">
+                <input class="control__status-field" type="number" id="km-atual" placeholder="EX: 15.000">
+                <label class="control__status-label" for="km-atual">KM</label>
+            </div>
+
+            <div class="control__status-feedback">
+                <p class="control__status-title">Status Geral</p>
+               
+                <div class="control__status-info">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <p>Tudo em Ordem</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </aside>
+    
+    <div class="filter">
+        <button class="filter__button active">Mais frequente </button>
+        <button class="filter__button">Menos frequente </button>
+        <button class="add"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>

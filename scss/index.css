@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+#teste {
+  background-color: red;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  text-align: none;
+  gap: 2rem;
+  background: rgb(221, 221, 221);
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background-color: #262b44;
+  width: 100%;
+  padding: 2rem;
+  font-family: "Fugaz One", sans-serif;
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  border-radius: 0 0 1rem 1rem;
+}
+.header__icon {
+  color: white;
+  background-color: #3905F0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.header__title {
+  color: white;
+}
+
+.control {
+  border: 1px solid rgb(199, 199, 199);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 70rem;
+  font-family: "Fugaz One", sans-serif;
+}
+.control__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: #9a9da1;
+}
+.control__title-title {
+  font-size: clamp(1rem, 1vw, 0.8rem);
+  font-weight: lighter;
+}
+.control__icon {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.control__status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 0rem;
+  padding: 1rem;
+  width: 100%;
+}
+.control__status-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  width: 60%;
+}
+.control__status-field {
+  background: rgb(221, 221, 221);
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 4rem;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+.control__status-field::-webkit-inner-spin-button, .control__status-field::-webkit-outer-spin-button {
+  opacity: 0;
+}
+.control__status-label {
+  color: #9a9da1;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+.control__status-feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  background-color: rgba(220, 221, 248, 0.479);
+  border: 1px solid rgb(199, 199, 199);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 30%;
+}
+.control__status-title {
+  color: #3905F0;
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
+  font-weight: lighter;
+}
+.control__status-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.control__status-info i, .control__status-info p {
+  color: #28a745;
+  font-size: 1rem;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .control__status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  .control__status-input {
+    width: 100%;
+  }
+  .control__status-feedback {
+    width: 100%;
+  }
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: none;
+  gap: 2rem;
+  background: #E2E8F0;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 70rem;
+}
+.filter__button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  border: none;
+  padding: 1rem;
+  width: 90%;
+  border-radius: 0.5rem;
+  background: none;
+  color: #9a9da1;
+  cursor: pointer;
+}
+.filter .active {
+  background: white;
+  color: #3905F0;
+}
+.filter .add {
+  padding: 1rem;
+  border: none;
+  background-color: white;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,12 @@
+#teste{
+    background-color: red;
+}
+
+@mixin center($direction: row, $justify: center, $align: center, $text: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
+    gap: $gap;
+}

@@ -1,0 +1,182 @@
+@use "mixin" as *;
+@use "variables" as *;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    @include center(column, none, center, none, 2rem);
+    background: color("body-bg");
+    
+    height: 100vh;
+}
+
+.header{
+    @include center(row, center, center, center, 1rem);
+    background-color: color("icon-bg");
+    width: sizes("full");
+    padding: sizes("xl");
+
+    font-family: $font-primaria;
+    font-size: clamp(.5rem, 2vw, 1rem);
+    border-radius: 0 0 1rem 1rem;
+
+    &__icon{
+        color: color("white");
+        background-color: color("icon-logo");
+        padding: sizes("l");
+        border-radius: sizes("m");
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    &__title{
+        color: color("white");
+    }
+}
+
+.control{
+    border: 1px solid color("border-card");
+    background-color: color("white");
+    padding: sizes("xl");
+    border-radius: sizes("m");
+    width: sizes("content");
+    max-width: sizes("max-content");
+
+    font-family: $font-primaria;
+
+    &__title{
+        @include center(row, flex-start, center, center, 1rem);
+        color: color("gray-title");
+        
+        &-title{
+            font-size: clamp(1rem, 1vw,.8rem);
+            font-weight: lighter;
+        }
+    }
+
+    &__icon{
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    &__status {
+        @include center(row, space-around, center, center, 0rem);
+        padding: sizes("m");
+        width: sizes("full");
+    }
+
+    // Ajustes de -input 
+    &__status-input {
+        @include center(row, center, center, center, .5rem);
+
+        width: 60%;
+
+    }
+    
+    &__status-field {
+        background: color("body-bg");
+        font-size: sizes("l");
+        border-radius: sizes("s");
+        padding: sizes("s") sizes("m");
+        width: sizes("full");
+
+        height: 4rem;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            opacity: 0;
+        }
+    }
+    
+    &__status-label {
+        color: color("gray-title");
+        font-size: sizes("l");
+
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+    
+    
+    // Ajuste de -feedback
+    &__status-feedback {
+        @include center(column, center, center, center, .5rem);
+        
+        background-color: color("feedback-bg");
+        border: 1px solid color("border-card");
+        padding: sizes("m");
+        border-radius: sizes("m");
+
+        width: 30%;
+    }
+
+    &__status-title{
+        color: color("icon-logo");
+        font-size: clamp(1.5rem, 2vw, 1.5rem);
+        font-weight: lighter;
+    }
+
+    &__status-info {
+        @include center(row, center, center, center, .5rem);
+        
+        i, p {
+            color: color("sucess");
+            font-size: sizes("m");
+
+            font-weight: 500;
+        }
+    }
+
+    @media (max-width: 900px){
+
+        &__status {
+            @include center(column, space-around, center, center, 2rem);
+        }
+
+        &__status-input {
+            width: 100%;
+        }
+
+        &__status-feedback {
+            width: 100%;
+        }
+    }
+}
+
+.filter{
+    @include center(row, center, center, none, 2rem);
+    background: color("button-bg");
+    padding: .25rem;
+    border-radius: .5rem;
+    width: sizes("content");
+    max-width: sizes("max-content");
+    
+    &__button{
+        font-family: $font-secundaria;
+        font-weight: bolder;
+        border: none;
+        padding: 1rem;
+        width: 90%;
+        border-radius: .5rem;
+        background: none;
+        color: color("gray-title");
+        cursor:pointer;
+    }
+
+    .active{
+        background: color("white");
+        color: color('icon-logo');
+    }
+
+    .add{
+        padding: 1rem;
+        border: none;
+        background-color: white;
+        border-radius: .5rem;
+    }
+}
