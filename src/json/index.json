@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Óleo do Motor",
+        "interval": "3.000",
+        "lastChange": "null",
+        "icon": "<i class='itemReviw__icon fa-solid fa-droplet'></i>"
+    },
+    {
+        "title": "Filtro de Óleo",
+        "interval": "6.000",
+        "lastChange": "null",
+        "icon": "<i class='itemReviw__icon fa-solid fa-droplet'></i>"
+    },
+    {
+        "title": "Lubrificar Cabos",
+        "interval": "5.000",
+        "lastChange": "null",
+        "icon": "<i class='itemReviw__icon fa-solid fa-droplet'></i>"
+    }
+]

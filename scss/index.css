@@ -142,7 +142,6 @@ main {
 .control__status-info i, .control__status-info p {
   color: #28a745;
   font-size: 1rem;
-  font-weight: 500;
 }
 @media (max-width: 900px) {
   .control__status {
@@ -176,13 +175,13 @@ main {
 }
 .filter__button {
   font-family: "Open Sans", sans-serif;
-  font-weight: bolder;
-  border: none;
+  color: #9a9da1;
+  border-radius: 0.5rem;
   padding: 1rem;
   width: 90%;
-  border-radius: 0.5rem;
+  font-weight: bolder;
+  border: none;
   background: none;
-  color: #9a9da1;
   cursor: pointer;
 }
 .filter .active {
@@ -190,29 +189,28 @@ main {
   color: #3905F0;
 }
 .filter .add {
-  padding: 1rem;
-  border: none;
   background-color: white;
+  padding: 1rem;
   border-radius: 0.5rem;
+  border: none;
   cursor: pointer;
 }
 
 .itemReviw {
-  border: 2px solid red;
   font-family: "Open Sans", sans-serif;
   width: 90%;
-  height: 100%;
+  height: 90%;
   max-width: 70rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
 }
 .itemReviw__card {
+  background-color: white;
+  border: 2px solid rgb(199, 199, 199);
   width: 100%;
   height: 100%;
   border-radius: 1rem;
-  background-color: white;
-  border: 2px solid rgb(199, 199, 199);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,10 +229,10 @@ main {
   width: 100%;
 }
 .itemReviw__icon {
-  padding: 1.2rem;
-  border-radius: 0.5rem;
   background-color: rgba(204, 209, 216, 0.7607843137);
   color: #1E293B;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 .itemReviw__titleGroup {
   display: flex;
@@ -264,33 +262,38 @@ main {
 }
 .itemReviw__mudeStatus {
   color: #28a745;
-  font-weight: 600;
+  font-weight: bold;
 }
 .itemReviw__remaining {
   color: #1E293B;
-  font-weight: 600;
+  font-weight: bold;
 }
 .itemReviw__footer {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   gap: 0.2rem;
+  width: 100%;
 }
 .itemReviw__lastChange {
   color: #a4a5a5;
-  font-weight: 600;
+  font-weight: bold;
 }
 .itemReviw__button {
   background-color: #EFF6FF;
+  color: #2563EB;
   padding: 1rem;
   border-radius: 0.5rem;
   border: none;
-  color: #2563EB;
-  font-weight: 600;
+  font-weight: bolder;
   cursor: pointer;
+}
+@media (max-width: 900px) {
+  .itemReviw {
+    grid-template-columns: 1fr;
+  }
 }
 .itemReviw .progress-container {
   width: 95%; /* Largura total */
