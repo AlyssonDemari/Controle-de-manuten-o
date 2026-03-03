@@ -1,7 +1,7 @@
 
 export async function carregarRevisoes() {
     try {
-        const resposta = await fetch('/src/json/index.json'); 
+        const resposta = await fetch('./src/json/index.json'); 
         const dados = await resposta.json();
         return dados;
     } catch (erro) {
