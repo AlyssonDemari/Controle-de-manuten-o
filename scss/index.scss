@@ -12,7 +12,9 @@ main{
     @include center(column, none, center, none, 2rem);
     background: color("body-bg");
     
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+    padding-bottom: 3rem;
 }
 
 .header{
@@ -178,5 +180,121 @@ main{
         border: none;
         background-color: white;
         border-radius: .5rem;
+        cursor: pointer;
     }
+}
+
+
+// itens 
+
+.itemReviw{
+    border: 2px solid red;
+
+    font-family: $font-secundaria;
+    width: sizes("content");
+    height: 100%;
+    max-width: sizes("max-content");
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+
+
+
+    &__card{
+        width: 100%;
+        height: 100%;
+
+        border-radius: 1rem;
+        background-color: color("white");
+        border: 2px solid color("border-card");
+        @include center(column, center, center, center, .5rem);
+        padding: 1.5rem 1rem;
+    }
+
+    //? titulo do card
+    &__header{
+        @include center(row, flex-start, center, center, 1rem);
+        width: 100%;
+    }
+    
+    &__icon{
+        padding: 1.2rem;
+        border-radius: .5rem;
+        background-color: color("iconCard-bg");
+        color: color("card-title");
+    }
+    
+    &__titleGroup{
+        @include center(column, center, flex-start, center, .2rem);
+    }
+    
+    &__name{
+        color: color("card-title");
+    }
+    
+    &__interval{
+        color: color("card-subtitle");
+    }
+
+
+    //? Progresso card
+    &__status{
+        width: 100%;
+        margin: .5rem 0;
+    }
+    
+    &__textGroup{
+        @include center(row, space-between, center, center, .2rem); 
+    }
+    
+    &__mudeStatus{
+        color: color("sucess");
+        font-weight: 600;
+    }
+    &__remaining{
+        color: color("card-title");
+        font-weight: 600;
+    }
+
+
+    //? footer card 
+    &__footer{
+        width: 100%;
+        @include center(row, space-between, center, center, .2rem);
+    }
+
+    &__lastChange{
+        color: color("card-subtitle");
+        font-weight: 600;
+    }
+
+    &__button{
+        background-color: color("cardButton-bg");
+        padding: 1rem;
+        border-radius: .5rem;
+        border: none;
+        color: color("cardButton-text");
+        font-weight: 600;
+        cursor: pointer;
+
+    }
+    
+//! vai ser trocado por um JS
+.progress-container {
+    width: 95%;           /* Largura total */
+    background-color: #f3f4f6; 
+    border-radius: 50px;   /* Deixa as bordas arredondadas */
+    height: 10px;          /* Altura da barra */
+    overflow: hidden;      /* Garante que o preenchimento não saia da borda */
+    margin: .5rem 0;
+    
+}
+.progress-bar {
+    width: 40%;            /* Altere aqui para controlar a porcentagem */
+    height: 100%;
+    background-color: #10b981; /* Cor verde da imagem */
+    border-radius: 50px;
+    transition: width 0.5s ease-in-out; /* Opcional: animação ao mudar o valor */
+}
 }

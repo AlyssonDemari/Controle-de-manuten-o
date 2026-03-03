@@ -37,14 +37,47 @@
         </div>
 
         
-    </aside>
+        </aside>
+        
+        <div class="filter">
+            <button class="filter__button active">Mais frequente </button>
+            <button class="filter__button">Menos frequente </button>
+            <button class="add"><i class="fa-solid fa-plus"></i></button>
+        </div>
     
-    <div class="filter">
-        <button class="filter__button active">Mais frequente </button>
-        <button class="filter__button">Menos frequente </button>
-        <button class="add"><i class="fa-solid fa-plus"></i></button>
-    </div>
-    
+        <article class="itemReviw">
+            <div class="itemReviw__card">
+
+                <header class="itemReviw__header">
+                    <i class="itemReviw__icon fa-solid fa-droplet"></i>
+                    <div class="itemReviw__titleGroup">
+                        <h2 class="itemReviw__name">Óleo do Motor</h2>
+                        <p class="itemReviw__interval">A cada 3.000 KM</p>
+                    </div>
+                </header>
+            
+                <div class="itemReviw__status">
+                    <div class="itemReviw__textGroup">
+                        <p class="itemReviw__mudeStatus">Em bom estado</p>
+                        <p class="itemReviw__remaining">Faltam 1.800 KM</p>
+                    </div>
+
+                    <!--! vai ser trocado por um JS -->
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <footer class="itemReviw__footer">
+                    
+                    <p class="itemReviw__lastChange">Última troca: 7.000 KM</p>
+        
+                    <button class="itemReviw__button">Atualizar <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+
+                </footer>
+            </div>
+        </article>
+
     </main>
     <script src="js/index.js"></script>
 </body>

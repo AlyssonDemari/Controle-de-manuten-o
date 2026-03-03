@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 #teste {
@@ -18,7 +19,9 @@ main {
   text-align: none;
   gap: 2rem;
   background: rgb(221, 221, 221);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 3rem;
 }
 
 .header {
@@ -191,4 +194,116 @@ main {
   border: none;
   background-color: white;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.itemReviw {
+  border: 2px solid red;
+  font-family: "Open Sans", sans-serif;
+  width: 90%;
+  height: 100%;
+  max-width: 70rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.itemReviw__card {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: white;
+  border: 2px solid rgb(199, 199, 199);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+.itemReviw__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 100%;
+}
+.itemReviw__icon {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(204, 209, 216, 0.7607843137);
+  color: #1E293B;
+}
+.itemReviw__titleGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  gap: 0.2rem;
+}
+.itemReviw__name {
+  color: #1E293B;
+}
+.itemReviw__interval {
+  color: #a4a5a5;
+}
+.itemReviw__status {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.itemReviw__textGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+}
+.itemReviw__mudeStatus {
+  color: #28a745;
+  font-weight: 600;
+}
+.itemReviw__remaining {
+  color: #1E293B;
+  font-weight: 600;
+}
+.itemReviw__footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+}
+.itemReviw__lastChange {
+  color: #a4a5a5;
+  font-weight: 600;
+}
+.itemReviw__button {
+  background-color: #EFF6FF;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: #2563EB;
+  font-weight: 600;
+  cursor: pointer;
+}
+.itemReviw .progress-container {
+  width: 95%; /* Largura total */
+  background-color: #f3f4f6;
+  border-radius: 50px; /* Deixa as bordas arredondadas */
+  height: 10px; /* Altura da barra */
+  overflow: hidden; /* Garante que o preenchimento não saia da borda */
+  margin: 0.5rem 0;
+}
+.itemReviw .progress-bar {
+  width: 40%; /* Altere aqui para controlar a porcentagem */
+  height: 100%;
+  background-color: #10b981; /* Cor verde da imagem */
+  border-radius: 50px;
+  transition: width 0.5s ease-in-out; /* Opcional: animação ao mudar o valor */
 }/*# sourceMappingURL=index.css.map */
