@@ -1,10 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-#teste {
-  background-color: red;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -309,4 +305,90 @@ main {
   background-color: #10b981; /* Cor verde da imagem */
   border-radius: 50px;
   transition: width 0.5s ease-in-out; /* Opcional: animação ao mudar o valor */
+}
+
+.inputItem {
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+.inputItem__container {
+  width: 30%;
+  height: 25%;
+  position: relative;
+}
+.inputItem #titulo, .inputItem #cada, .inputItem #ultima {
+  font-size: 1.5rem;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+}
+.inputItem #titulo:focus, .inputItem #cada:focus, .inputItem #ultima:focus {
+  outline: none;
+  background-color: #f3f4f6;
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+}
+.inputItem #titulo::-moz-placeholder, .inputItem #cada::-moz-placeholder, .inputItem #ultima::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.726);
+}
+.inputItem #titulo::placeholder, .inputItem #cada::placeholder, .inputItem #ultima::placeholder {
+  color: rgba(0, 0, 0, 0.726);
+}
+.inputItem #cada {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.inputItem #cada::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.466);
+}
+.inputItem #cada::placeholder {
+  color: rgba(0, 0, 0, 0.466);
+}
+.inputItem #ultima {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.inputItem #ultima::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.466);
+}
+.inputItem #ultima::placeholder {
+  color: rgba(0, 0, 0, 0.466);
+}
+.inputItem .createItem {
+  background-color: #EFF6FF;
+  color: #2563EB;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.inputItem .createCancel {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+}
+.inputItem .createCancel button {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(255, 0, 0, 0.26);
+}
+.inputItem .createCancel button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=index.css.map */

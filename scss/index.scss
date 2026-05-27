@@ -213,7 +213,7 @@ main{
     //? titulo do card
     &__header{
         @include center(row, flex-start, center, center, 1rem);
-        width: sizes("full");
+        width: sizes("full");;
     }
     
     &__icon{
@@ -300,4 +300,84 @@ main{
     border-radius: 50px;
     transition: width 0.5s ease-in-out; /* Opcional: animação ao mudar o valor */
 }
+}
+
+
+.inputItem{
+    font-family: $font-secundaria;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.432);
+
+    &__container{
+        width: 30%;
+        height: 25%;
+        position: relative;
+    }
+
+    #titulo, #cada, #ultima{
+        font-size: 1.5rem;
+        width: 100%;
+        border: none;
+        font-weight: bold;
+
+        &:focus{outline: none; background-color: #f3f4f6; padding: 0rem 1rem; border-radius: 1rem;}
+        &::placeholder{color: rgba(0, 0, 0, 0.726)}
+    }
+
+    #cada{
+        font-size: 1rem;
+         font-weight: normal;
+        &::placeholder{color: rgba(0, 0, 0, 0.466)}
+    }
+
+    #ultima{
+        font-size: 1rem;
+         font-weight: bolder;
+        &::placeholder{color: rgba(0, 0, 0, 0.466)}
+    }
+
+    .createItem{
+        background-color: color("cardButton-bg");
+        color: color("cardButton-text");
+        padding: sizes("m");
+        border-radius: sizes("s");
+        border: none;
+        font-weight: bolder;
+        cursor: pointer;
+
+    }
+
+    .createCancel{
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 2rem;
+        height: 2rem;
+        margin: .5rem;
+        
+        button{
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: rgba(255, 0, 0, 0.26);
+
+        &:hover{
+            cursor: pointer;
+            background-color: red;
+        }
+        }
+    }
+    
+
+
+}
+
+.hidden{
+    display: none !important;
 }
