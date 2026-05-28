@@ -197,6 +197,11 @@ main {
   width: 90%;
   height: 90%;
   max-width: 70rem;
+}
+.itemReviw .important {
+  background: rgba(255, 0, 0, 0.13);
+}
+.itemReviw {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
@@ -308,6 +313,9 @@ main {
 }
 
 .inputItem {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-family: "Open Sans", sans-serif;
   position: absolute;
   display: flex;
@@ -319,8 +327,12 @@ main {
 }
 .inputItem__container {
   width: 30%;
-  height: 25%;
+  height: 20%;
   position: relative;
+}
+.inputItem .checkFrequency {
+  margin: 1rem 0 0 0;
+  align-self: flex-start;
 }
 .inputItem #titulo, .inputItem #cada, .inputItem #ultima {
   font-size: 1.5rem;

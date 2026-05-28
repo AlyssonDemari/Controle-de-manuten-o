@@ -193,6 +193,11 @@ main{
     height: sizes("content");
     max-width: sizes("max-content");
 
+    // ! teste
+    .important{
+        background: rgba(255, 0, 0, 0.13);
+    }
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: sizes("s");
@@ -304,6 +309,7 @@ main{
 
 
 .inputItem{
+    user-select: none;
     font-family: $font-secundaria;
     position: absolute;
     display: flex;
@@ -315,8 +321,13 @@ main{
 
     &__container{
         width: 30%;
-        height: 25%;
+        height: 20%;
         position: relative;
+    }
+
+    .checkFrequency{
+        margin: 1rem 0 0 0;
+        align-self: flex-start;
     }
 
     #titulo, #cada, #ultima{
@@ -373,6 +384,7 @@ main{
         }
         }
     }
+
     
 
 

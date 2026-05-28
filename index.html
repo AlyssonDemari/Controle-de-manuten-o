@@ -46,8 +46,7 @@
         </div>
     
         <article class="itemReviw">
-            <div class="itemReviw__card">
-
+            <div class="itemReviw__card important">
                 <header class="itemReviw__header">
                     <i class="itemReviw__icon fa-solid fa-droplet"></i>
                     <div class="itemReviw__titleGroup">
@@ -83,31 +82,23 @@
             <div class="itemReviw__card">
                 <span class="createCancel"><button id="teste" step="5">X</button></span>
                 <header class="itemReviw__header">
-                    <i class="itemReviw__icon fa-solid fa-droplet"></i>
+                    <i class="itemReviw__icon fa-solid fa-screwdriver-wrench"></i>
                     <div class="itemReviw__titleGroup">
                         <input maxlength="35" autofocus step="1" type="text" name="titulo" id="titulo" placeholder="EX: Óleo do Motor">
-                        <input maxlength="35" step="2" type="text" name="cada" id="cada" placeholder="A cada 1.000 KM">
+                        <input maxlength="35" step="2" type="text" name="cada" id="cada" placeholder="EX: A cada 1.000 KM">
                     </div>
                 </header>
-            
-                <div class="itemReviw__status">
-                    <div class="itemReviw__textGroup">
-                        <p class="itemReviw__mudeStatus">Em bom estado</p>
-                        <p class="itemReviw__remaining">Faltam 1.800 KM</p>
-                    </div>
-
-                    <!--! vai ser trocado por um JS -->
-                    <div class="progress-container">
-                        <div class="progress-bar"></div>
-                    </div>
+                
+                <div class="checkFrequency">
+                    <input step="3" type="checkbox" name="frequencyFilter" id="frequencyFilter"> Marcar como frequente? 
                 </div>
-
+                
                 <footer class="itemReviw__footer">
                     
-                    <p class="itemReviw__lastChange"><input maxlength="35" step="3" type="text" name="ultima" id="ultima" placeholder="EX: Última troca: 7.000 KM"></p>
-        
+                    <p class="itemReviw__lastChange"><input maxlength="35" step="4" type="text" name="ultima" id="ultima" placeholder="EX: Última troca: 7.000 KM"></p>
+                    
                     <button class="createItem">Criar <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
-
+                    
                 </footer>
             </div>
             </div>
