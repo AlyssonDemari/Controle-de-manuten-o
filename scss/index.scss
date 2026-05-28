@@ -320,9 +320,35 @@ main{
     background-color: rgba(0, 0, 0, 0.432);
 
     &__container{
+        border: 2px solid red;
         width: 30%;
         height: 20%;
         position: relative;
+    }
+
+    &__card{
+        background-color: color("white");
+        border: 2px solid color("border-card");
+        width: sizes("full");
+        height: sizes("full");
+
+        border-radius: sizes("m");
+        @include center(column, center, center, center, .5rem);
+        padding: sizes("l") sizes("m");
+    }
+
+    &__header{
+        @include center(row, flex-start, center, center, 1rem);
+        width: sizes("full");;
+    }
+
+    &__titleGroup{
+        @include center(column, center, flex-start, center, .2rem);
+    }
+
+    &__footer{
+        @include center(row, space-between, center, center, .2rem);
+        width: sizes("full");
     }
 
     .checkFrequency{

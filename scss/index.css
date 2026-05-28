@@ -326,9 +326,50 @@ main {
   background-color: rgba(0, 0, 0, 0.432);
 }
 .inputItem__container {
+  border: 2px solid red;
   width: 30%;
   height: 20%;
   position: relative;
+}
+.inputItem__card {
+  background-color: white;
+  border: 2px solid rgb(199, 199, 199);
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+.inputItem__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 100%;
+}
+.inputItem__titleGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  gap: 0.2rem;
+}
+.inputItem__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+  width: 100%;
 }
 .inputItem .checkFrequency {
   margin: 1rem 0 0 0;
