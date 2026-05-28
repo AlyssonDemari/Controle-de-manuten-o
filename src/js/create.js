@@ -1,3 +1,5 @@
+import {filtrarAoCarregar} from './filter.js'
+
 const btnAbrir = document.querySelector('.add');
 const btnFechar = document.querySelector('#teste');
 const btnCreate = document.querySelector('.createItem');
@@ -10,6 +12,8 @@ const inputCada = document.querySelector('#cada');
 const inputLast = document.querySelector('#ultima');
 const checkbox = document.querySelector('#frequencyFilter');
 
+
+//? Função que limpa os inputs
 const clearInputs = () => {
     inputTitulo.value = '';
     inputCada.value = '';
@@ -17,11 +21,13 @@ const clearInputs = () => {
     checkbox.checked = '';
 };
 
+//? Função que abre o card para criar o item
 const openCreate = () => {
     card.classList.remove('hidden');
     inputTitulo.focus();
 };
 
+//? Função que fecha o card para criar o item
 const closeCreate = () => {
     card.classList.add('hidden');
     clearInputs();
@@ -30,13 +36,12 @@ const closeCreate = () => {
 btnAbrir.addEventListener('click', openCreate);
 btnFechar.addEventListener('click', closeCreate);
 
-// CRIAÇÃO DO ITEM
+//? Função que realmente cria o item
 btnCreate.addEventListener('click', () => {
     const tituloValue = inputTitulo.value.trim();
     const cadaValue = inputCada.value.trim();
     const lastValue = inputLast.value.trim();
 
-    // Validação básica: impede a criação se algum campo estiver vazio
     if (!tituloValue || !cadaValue || !lastValue) {
         alert("Por favor, preencha todos os campos antes de continuar.");
         return; 
@@ -45,10 +50,11 @@ btnCreate.addEventListener('click', () => {
     const isImportant = checkbox.checked;
 
     createItem(tituloValue, cadaValue, lastValue, isImportant);
+    filtrarAoCarregar()
     closeCreate();
 });
 
-//FUNÇÃO DE RENDERIZAÇÃO
+//? Função quer renderiza o item
 const createItem = (tituloValue, cadaValue, lastValue, isImportant) => {
     const template = `
         <div class="itemReviw__card ${isImportant ? 'important' : ''}">

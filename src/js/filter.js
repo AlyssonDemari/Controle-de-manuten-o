@@ -16,7 +16,7 @@ const botaoAtualizar = document.querySelector('.moreFrequency')
 const botaoAtualizar2 = document.querySelector('.noFrequency');
 
 //? Filtra todos frequentes ao carregar a página
-function filtrarAoCarregar() {
+export function filtrarAoCarregar() {
     todosCartoes.forEach(cartao => {
         if (cartao.classList.contains('important')) {
             clickNoFrequency()
