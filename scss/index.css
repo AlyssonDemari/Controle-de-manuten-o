@@ -319,14 +319,16 @@ main {
   font-family: "Open Sans", sans-serif;
   position: absolute;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.432);
 }
 .inputItem__container {
-  border: 2px solid red;
   width: 30%;
   height: 20%;
   position: relative;
@@ -375,45 +377,45 @@ main {
   margin: 1rem 0 0 0;
   align-self: flex-start;
 }
-.inputItem #titulo, .inputItem #cada, .inputItem #ultima {
+.inputItem #titleItem, .inputItem #titleInterval, .inputItem #titleLast {
   font-size: 1.5rem;
   width: 100%;
   border: none;
   font-weight: bold;
 }
-.inputItem #titulo:focus, .inputItem #cada:focus, .inputItem #ultima:focus {
+.inputItem #titleItem:focus, .inputItem #titleInterval:focus, .inputItem #titleLast:focus {
   outline: none;
   background-color: #f3f4f6;
   padding: 0rem 1rem;
   border-radius: 1rem;
 }
-.inputItem #titulo::-moz-placeholder, .inputItem #cada::-moz-placeholder, .inputItem #ultima::-moz-placeholder {
+.inputItem #titleItem::-moz-placeholder, .inputItem #titleInterval::-moz-placeholder, .inputItem #titleLast::-moz-placeholder {
   color: rgba(0, 0, 0, 0.726);
 }
-.inputItem #titulo::placeholder, .inputItem #cada::placeholder, .inputItem #ultima::placeholder {
+.inputItem #titleItem::placeholder, .inputItem #titleInterval::placeholder, .inputItem #titleLast::placeholder {
   color: rgba(0, 0, 0, 0.726);
 }
-.inputItem #cada {
+.inputItem #titleInterval {
   font-size: 1rem;
   font-weight: normal;
 }
-.inputItem #cada::-moz-placeholder {
+.inputItem #titleInterval::-moz-placeholder {
   color: rgba(0, 0, 0, 0.466);
 }
-.inputItem #cada::placeholder {
+.inputItem #titleInterval::placeholder {
   color: rgba(0, 0, 0, 0.466);
 }
-.inputItem #ultima {
+.inputItem #titleLast {
   font-size: 1rem;
   font-weight: bolder;
 }
-.inputItem #ultima::-moz-placeholder {
+.inputItem #titleLast::-moz-placeholder {
   color: rgba(0, 0, 0, 0.466);
 }
-.inputItem #ultima::placeholder {
+.inputItem #titleLast::placeholder {
   color: rgba(0, 0, 0, 0.466);
 }
-.inputItem .createItem {
+.inputItem__createItem {
   background-color: #EFF6FF;
   color: #2563EB;
   padding: 1rem;
@@ -422,7 +424,7 @@ main {
   font-weight: bolder;
   cursor: pointer;
 }
-.inputItem .createCancel {
+.inputItem__createCancel {
   position: absolute;
   top: 0%;
   right: 0%;
@@ -430,14 +432,14 @@ main {
   height: 2rem;
   margin: 0.5rem;
 }
-.inputItem .createCancel button {
+.inputItem__createCancel button {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   border: none;
   background-color: rgba(255, 0, 0, 0.26);
 }
-.inputItem .createCancel button:hover {
+.inputItem__createCancel button:hover {
   cursor: pointer;
   background-color: red;
 }

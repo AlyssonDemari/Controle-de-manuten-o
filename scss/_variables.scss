@@ -13,6 +13,7 @@ $cores: (
   "icon-bg": #262b44,
   "body-bg": rgb(221, 221, 221),
   "button-bg": #E2E8F0,
+  "shadow": rgba(0, 0, 0, 0.432),
 
   "iconCard-bg": #ccd1d8c2,
   "card-text": #9a9da1,
@@ -35,6 +36,8 @@ $cores: (
 }
 
 $sizes: (
+    "20": 20%, 
+    "30": 30%, 
     "full": 100%,
     "middle": 50%,
     "content": 90%,

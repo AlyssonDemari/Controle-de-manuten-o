@@ -312,17 +312,14 @@ main{
     user-select: none;
     font-family: $font-secundaria;
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.432);
+    @include center(column, center, center, center, .5rem);
+    width: sizes("full");
+    height: sizes("full");
+    background-color: color("shadow");
 
     &__container{
-        border: 2px solid red;
-        width: 30%;
-        height: 20%;
+        width: sizes("30");
+        height: sizes("20");
         position: relative;
     }
 
@@ -339,7 +336,7 @@ main{
 
     &__header{
         @include center(row, flex-start, center, center, 1rem);
-        width: sizes("full");;
+        width: sizes("full");
     }
 
     &__titleGroup{
@@ -356,9 +353,9 @@ main{
         align-self: flex-start;
     }
 
-    #titulo, #cada, #ultima{
-        font-size: 1.5rem;
-        width: 100%;
+    #titleItem, #titleInterval, #titleLast{
+        font-size: sizes("l");
+        width: sizes("full");
         border: none;
         font-weight: bold;
 
@@ -366,19 +363,19 @@ main{
         &::placeholder{color: rgba(0, 0, 0, 0.726)}
     }
 
-    #cada{
-        font-size: 1rem;
-         font-weight: normal;
+    #titleInterval{
+        font-size: sizes("m");
+        font-weight: normal;
         &::placeholder{color: rgba(0, 0, 0, 0.466)}
     }
 
-    #ultima{
-        font-size: 1rem;
-         font-weight: bolder;
+    #titleLast{
+        font-size: sizes("m");
+        font-weight: bolder;
         &::placeholder{color: rgba(0, 0, 0, 0.466)}
     }
 
-    .createItem{
+    &__createItem{
         background-color: color("cardButton-bg");
         color: color("cardButton-text");
         padding: sizes("m");
@@ -389,7 +386,7 @@ main{
 
     }
 
-    .createCancel{
+    &__createCancel{
         position: absolute;
         top: 0%;
         right: 0%;
@@ -398,9 +395,9 @@ main{
         margin: .5rem;
         
         button{
-            border-radius: 50%;
-            width: 100%;
-            height: 100%;
+            border-radius: sizes("middle");;
+            width: sizes("full");
+            height: sizes("full");
             border: none;
             background-color: rgba(255, 0, 0, 0.26);
 
@@ -410,9 +407,6 @@ main{
         }
         }
     }
-
-    
-
 
 }
 
