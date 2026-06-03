@@ -18,6 +18,7 @@ main {
   min-height: 100vh;
   height: 100%;
   padding-bottom: 3rem;
+  border: 2px solid purple;
 }
 
 .header {
@@ -324,24 +325,34 @@ main {
   background-color: rgba(0, 0, 0, 0.432);
 }
 .inputItem__container {
-  width: 30%;
-  height: 20%;
-  position: relative;
-  container-type: inline-size;
-}
-.inputItem__card {
-  background-color: white;
-  border: 2px solid rgb(199, 199, 199);
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
+  width: clamp(20rem, 90%, 70rem);
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 0.5rem;
-  padding: 1.5rem 1rem;
+  container-type: inline-size;
+}
+.inputItem__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+}
+@container (max-width: 50rem) {
+  .inputItem__card {
+    width: 100%;
+  }
 }
 .inputItem__header {
   display: flex;
@@ -352,6 +363,13 @@ main {
   gap: 1rem;
   width: 100%;
 }
+.inputItem__icon {
+  background-color: rgba(204, 209, 216, 0.7607843137);
+  color: #1E293B;
+  padding: clamp(0.6rem, 3cqw, 1rem);
+  font-size: clamp(0.7rem, 3cqw, 1rem);
+  border-radius: 0.5rem;
+}
 .inputItem__titleGroup {
   display: flex;
   flex-direction: column;
@@ -359,7 +377,7 @@ main {
   align-items: flex-start;
   text-align: center;
   gap: 0.2rem;
-  width: 90%;
+  width: 100%;
 }
 .inputItem__footer {
   display: flex;
@@ -372,19 +390,19 @@ main {
 }
 .inputItem .checkFrequency {
   margin: 1rem 0 0 0;
+  font-size: clamp(0.7rem, 3cqw, 1rem);
   align-self: flex-start;
 }
 .inputItem #titleItem, .inputItem #titleInterval, .inputItem #titleLast {
-  font-size: clamp(1rem, 1.5vw, 2rem);
   width: 100%;
-  border: none;
-  font-weight: bold;
+  font-size: clamp(0.7rem, 4cqw, 1.5rem);
   padding: 0 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
 }
 .inputItem #titleItem:focus, .inputItem #titleInterval:focus, .inputItem #titleLast:focus {
   outline: none;
   background-color: #f3f4f6;
-  border-radius: 1rem;
 }
 .inputItem #titleItem::-moz-placeholder, .inputItem #titleInterval::-moz-placeholder, .inputItem #titleLast::-moz-placeholder {
   color: rgba(0, 0, 0, 0.726);
@@ -393,8 +411,7 @@ main {
   color: rgba(0, 0, 0, 0.726);
 }
 .inputItem #titleInterval {
-  font-size: clamp(1rem, 1vw, 1.2rem);
-  font-weight: normal;
+  font-size: clamp(0.7rem, 3cqw, 1rem);
 }
 .inputItem #titleInterval::-moz-placeholder {
   color: rgba(0, 0, 0, 0.466);
@@ -403,8 +420,7 @@ main {
   color: rgba(0, 0, 0, 0.466);
 }
 .inputItem #titleLast {
-  font-size: 1rem;
-  font-weight: bolder;
+  font-size: clamp(0.7rem, 3cqw, 1rem);
 }
 .inputItem #titleLast::-moz-placeholder {
   color: rgba(0, 0, 0, 0.466);
@@ -413,10 +429,10 @@ main {
   color: rgba(0, 0, 0, 0.466);
 }
 .inputItem__createItem {
+  font-size: clamp(0.9rem, 3cqw, 1rem);
+  padding: clamp(0.6rem, 1cqw, 0.5rem);
   background-color: #EFF6FF;
   color: #2563EB;
-  padding: clamp(0.5rem, 10cqw, 1rem);
-  font-size: clamp(0.5rem, 5cqw, 1rem);
   border-radius: 0.5rem;
   border: none;
   font-weight: bolder;
@@ -424,8 +440,8 @@ main {
 }
 .inputItem__createCancel {
   position: absolute;
-  bottom: 98%;
-  right: 0%;
+  bottom: 100%;
+  left: 94%;
   width: 2rem;
   height: 2rem;
   margin: 0.5rem;
@@ -435,11 +451,8 @@ main {
   width: 100%;
   height: 100%;
   border: none;
-  background-color: rgba(255, 0, 0, 0.26);
-}
-.inputItem__createCancel button:hover {
-  cursor: pointer;
   background-color: red;
+  cursor: pointer;
 }
 @media (max-width: 900px) {
   .inputItem__container {

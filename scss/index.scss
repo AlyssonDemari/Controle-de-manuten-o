@@ -15,6 +15,7 @@ main{
     min-height: 100vh;
     height: 100%;
     padding-bottom: 3rem;
+    border: 2px solid purple
 }
 
 .header{
@@ -313,72 +314,91 @@ main{
     background-color: color("shadow");
 
     &__container{
-        width: sizes("30");
-        height: sizes("20");
-        position: relative;
+        width: clamp(20rem, 90%, 70rem);
+        height: 30%;
+        @include center(column, center, center, center, .5rem);
         container-type: inline-size;
     }
 
     &__card{
-        background-color: color("white");
-        border: 2px solid color("border-card");
-        width: sizes("full");
-        height: sizes("full");
-
-        border-radius: sizes("m");
+        position: relative;
         @include center(column, center, center, center, .5rem);
-        padding: sizes("l") sizes("m");
+        background-color: color("white");
+        border-radius: .5rem;
+        width: 50%;
+        height: 100%;
+        padding: 1rem;
+
+        //? se o container for 50rem fica com 100%
+        @container(max-width: 50rem) {
+            width: 100%;
+        }
+  
     }
 
     &__header{
         @include center(row, flex-start, center, center, 1rem);
-        width: sizes("full");
+        // border: 2px solid blue;
+        width: 100%;
+
+    }
+
+    &__icon{
+        background-color: color("iconCard-bg");
+        color: color("card-title");
+        padding: clamp(.6rem, 3cqw, 1rem);
+        font-size:clamp(.7rem, 3cqw, 1rem);
+        border-radius: sizes("s");
     }
 
     &__titleGroup{
         @include center(column, center, flex-start, center, .2rem);
-        width: sizes("content");
+        // border: 2px solid green;
+        width: 100%;
     }
 
     &__footer{
         @include center(row, space-between, center, center, .2rem);
-        width: sizes("full");
+        width: 100%;
     }
 
     .checkFrequency{
         margin: 1rem 0 0 0;
+        font-size:clamp(.7rem, 3cqw, 1rem);
+
         align-self: flex-start;
     }
 
     #titleItem, #titleInterval, #titleLast{
-        font-size: clamp(1rem, 1.5vw, 2rem);
-        width: sizes("full");
-        border: none;
-        font-weight: bold;
+        width: 100%;
+        font-size:clamp(.7rem, 4cqw, 1.5rem);
         padding: 0 .5rem;
+        border-radius: 1rem;
+        border: 1px solid black;
         
-
-        &:focus{outline: none; background-color: #f3f4f6; border-radius: 1rem;}
+        &:focus{outline: none; background-color: #f3f4f6;}
         &::placeholder{color: rgba(0, 0, 0, 0.726)}
     }
 
     #titleInterval{
-        font-size: clamp(1rem, 1vw, 1.2rem);
-        font-weight: normal;
+        font-size:clamp(.7rem, 3cqw, 1rem);
+
+
         &::placeholder{color: rgba(0, 0, 0, 0.466)}
     }
 
     #titleLast{
-        font-size: sizes("m");
-        font-weight: bolder;
+        font-size:clamp(.7rem, 3cqw, 1rem);
+        
+
         &::placeholder{color: rgba(0, 0, 0, 0.466)}
     }
 
-    &__createItem{
-        background-color: color("cardButton-bg");
+    &__createItem{        
+        font-size: clamp(.9rem, 3cqw, 1rem);
+        padding: clamp(.6rem, 1cqw, .5rem);
+                background-color: color("cardButton-bg");
         color: color("cardButton-text");
-        padding: clamp(.5rem, 10cqw, 1rem);
-        font-size: clamp(.5rem, 5cqw, 1rem);
         border-radius: sizes("s");
         border: none;
         font-weight: bolder;
@@ -388,35 +408,23 @@ main{
 
     &__createCancel{
         position: absolute;
-        bottom: 98%;
-        right: 0%;
+        bottom: 100%;
+        left: 94%;
         width: 2rem;
         height: 2rem;
         margin: .5rem;
+        
         
         button{
             border-radius: sizes("middle");;
             width: sizes("full");
             height: sizes("full");
             border: none;
-            background-color: rgba(255, 0, 0, 0.26);
-
-        &:hover{
-            cursor: pointer;
             background-color: red;
-        }
+            cursor: pointer;
+
         }
     }
-
-    // @media (max-width: 1200px){
-
-    //     &__container{
-    //     width: sizes("70");
-    //     height: sizes("20");
-    //     position: relative;
-    //     background-color: red;
-    //     }
-    // }
 
     @media (max-width: 900px){
 
