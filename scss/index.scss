@@ -193,11 +193,6 @@ main{
     height: sizes("content");
     max-width: sizes("max-content");
 
-    // ! teste
-    .important{
-        background: rgba(255, 0, 0, 0.13);
-    }
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: sizes("s");
@@ -321,6 +316,7 @@ main{
         width: sizes("30");
         height: sizes("20");
         position: relative;
+        container-type: inline-size;
     }
 
     &__card{
@@ -341,6 +337,7 @@ main{
 
     &__titleGroup{
         @include center(column, center, flex-start, center, .2rem);
+        width: sizes("content");
     }
 
     &__footer{
@@ -354,17 +351,19 @@ main{
     }
 
     #titleItem, #titleInterval, #titleLast{
-        font-size: sizes("l");
+        font-size: clamp(1rem, 1.5vw, 2rem);
         width: sizes("full");
         border: none;
         font-weight: bold;
+        padding: 0 .5rem;
+        
 
-        &:focus{outline: none; background-color: #f3f4f6; padding: 0rem 1rem; border-radius: 1rem;}
+        &:focus{outline: none; background-color: #f3f4f6; border-radius: 1rem;}
         &::placeholder{color: rgba(0, 0, 0, 0.726)}
     }
 
     #titleInterval{
-        font-size: sizes("m");
+        font-size: clamp(1rem, 1vw, 1.2rem);
         font-weight: normal;
         &::placeholder{color: rgba(0, 0, 0, 0.466)}
     }
@@ -378,7 +377,8 @@ main{
     &__createItem{
         background-color: color("cardButton-bg");
         color: color("cardButton-text");
-        padding: sizes("m");
+        padding: clamp(.5rem, 10cqw, 1rem);
+        font-size: clamp(.5rem, 5cqw, 1rem);
         border-radius: sizes("s");
         border: none;
         font-weight: bolder;
@@ -388,7 +388,7 @@ main{
 
     &__createCancel{
         position: absolute;
-        top: 0%;
+        bottom: 98%;
         right: 0%;
         width: 2rem;
         height: 2rem;
@@ -408,8 +408,29 @@ main{
         }
     }
 
+    // @media (max-width: 1200px){
+
+    //     &__container{
+    //     width: sizes("70");
+    //     height: sizes("20");
+    //     position: relative;
+    //     background-color: red;
+    //     }
+    // }
+
+    @media (max-width: 900px){
+
+        &__container{
+        width: sizes("content");
+        height: sizes("20");
+        position: relative;
+        background-color: red;
+        }
+    }
+
 }
 
 .hidden{
     display: none !important;
 }
+

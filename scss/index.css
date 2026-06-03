@@ -197,11 +197,6 @@ main {
   width: 90%;
   height: 90%;
   max-width: 70rem;
-}
-.itemReviw .important {
-  background: rgba(255, 0, 0, 0.13);
-}
-.itemReviw {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
@@ -332,6 +327,7 @@ main {
   width: 30%;
   height: 20%;
   position: relative;
+  container-type: inline-size;
 }
 .inputItem__card {
   background-color: white;
@@ -363,6 +359,7 @@ main {
   align-items: flex-start;
   text-align: center;
   gap: 0.2rem;
+  width: 90%;
 }
 .inputItem__footer {
   display: flex;
@@ -378,15 +375,15 @@ main {
   align-self: flex-start;
 }
 .inputItem #titleItem, .inputItem #titleInterval, .inputItem #titleLast {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
   width: 100%;
   border: none;
   font-weight: bold;
+  padding: 0 0.5rem;
 }
 .inputItem #titleItem:focus, .inputItem #titleInterval:focus, .inputItem #titleLast:focus {
   outline: none;
   background-color: #f3f4f6;
-  padding: 0rem 1rem;
   border-radius: 1rem;
 }
 .inputItem #titleItem::-moz-placeholder, .inputItem #titleInterval::-moz-placeholder, .inputItem #titleLast::-moz-placeholder {
@@ -396,7 +393,7 @@ main {
   color: rgba(0, 0, 0, 0.726);
 }
 .inputItem #titleInterval {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1vw, 1.2rem);
   font-weight: normal;
 }
 .inputItem #titleInterval::-moz-placeholder {
@@ -418,7 +415,8 @@ main {
 .inputItem__createItem {
   background-color: #EFF6FF;
   color: #2563EB;
-  padding: 1rem;
+  padding: clamp(0.5rem, 10cqw, 1rem);
+  font-size: clamp(0.5rem, 5cqw, 1rem);
   border-radius: 0.5rem;
   border: none;
   font-weight: bolder;
@@ -426,7 +424,7 @@ main {
 }
 .inputItem__createCancel {
   position: absolute;
-  top: 0%;
+  bottom: 98%;
   right: 0%;
   width: 2rem;
   height: 2rem;
@@ -442,6 +440,14 @@ main {
 .inputItem__createCancel button:hover {
   cursor: pointer;
   background-color: red;
+}
+@media (max-width: 900px) {
+  .inputItem__container {
+    width: 90%;
+    height: 20%;
+    position: relative;
+    background-color: red;
+  }
 }
 
 .hidden {
