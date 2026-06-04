@@ -5,35 +5,32 @@ const btnFechar = document.querySelector('#teste');
 const btnCreate = document.querySelector('.inputItem__createItem');
 const card = document.querySelector('.inputItem');
 const grid = document.querySelector('.itemReviw');
-const item = document.querySelector('.itemReviw__card')
 
 const titleImput = document.querySelector('#titleItem');
 const IntervalInput = document.querySelector('#titleInterval');
 const lastInput = document.querySelector('#titleLast');
 const checkbox = document.querySelector('#frequencyFilter');
 
+//! Alterado com o banco de dados futuramente
+    let odometer = document.querySelector('.control__status-field');
+    const valorSalvo = localStorage.getItem('leituraOdometro');
 
-//! Vai ser alterado com o banco de dados 
-        let odometer = document.querySelector('.control__status-field');
-        const valorSalvo = localStorage.getItem('leituraOdometro');
-
-        if (valorSalvo) {
+    if (valorSalvo) {
         odometer.value = valorSalvo;
-        }
+    }
 
-        odometer.addEventListener('change', function(event) {
+    odometer.addEventListener('change', function(event) {
         const valorFinal = event.target.value;
         localStorage.setItem('leituraOdometro', valorFinal);
-        });
+});
 //! Final
-
 
 //? Função que limpa os inputs
 const clearInputs = () => {
     titleImput.value = '';
     IntervalInput.value = '';
     lastInput.value = '';
-    checkbox.checked = '';
+    checkbox.checked = false;
 };
 
 //? Função que abre o card para criar o item
@@ -57,25 +54,45 @@ btnCreate.addEventListener('click', () => {
     const intervalValue = IntervalInput.value.trim();
     const lastValue = lastInput.value.trim();
 
-    //! teste
-    let faltam = Number(intervalValue) + Number(lastValue) - Number(valorSalvo)
-
-    if (!titleValue || !intervalValue || !lastValue || !faltam) {
-        alert("Por favor, preencha todos os campos antes de continuar.");
+    if (!titleValue || !intervalValue || !lastValue || !valorSalvo) {
+        alert("Por favor, preencha todos os campos e defina o odômetro antes de continuar.");
         return; 
     }
 
+    let kmAtual = Number(valorSalvo);
+    let kmUltimaTroca = Number(lastValue);
+    let kmIntervalo = Number(intervalValue);
+    
+    let proximaTroca = kmUltimaTroca + kmIntervalo
+    let faltam = proximaTroca - kmAtual;
+    
+    let porcentagem = 0;
+    let mudeStatus = "Faltam"
+    
+    if (faltam > 0) {
+        porcentagem = (faltam / kmIntervalo) * 100;
+    } else {
+        mudeStatus = "Atrasado"
+    }
+
+    let kmVisuais = Math.abs(faltam);
+    
+    // Limita entre 0 e 100
+    porcentagem = Math.max(0, Math.min(100, porcentagem));
+
+    const valorPuro = Number(porcentagem.toString().replace('%', ''));
+    const corBarra = valorPuro <= 40 ? '#ef4444' : '#10b981';
+
     const isImportant = checkbox.checked;
 
-    createItem(titleValue, intervalValue, lastValue, isImportant, faltam);
-    filtrarAoCarregar()
+    createItem(titleValue, intervalValue, lastValue, isImportant, kmVisuais, porcentagem, corBarra, mudeStatus);
+    filtrarAoCarregar();
     closeCreate();
 });
 
 
-
-//? Função quer renderiza o item
-const createItem = (titleValue, intervalValue, lastValue, isImportant, faltam) => {
+//? Função quer renderiza o item - Adicionado parâmetro corBarra
+const createItem = (titleValue, intervalValue, lastValue, isImportant, kmVisuais, porcentagem, corBarra, mudeStatus) => {
     const template = `
         <div class="itemReviw__card ${isImportant ? 'important' : ''}">
             <header class="itemReviw__header">
@@ -88,12 +105,14 @@ const createItem = (titleValue, intervalValue, lastValue, isImportant, faltam) =
         
             <div class="itemReviw__status">
                 <div class="itemReviw__textGroup">
-                    <p class="itemReviw__mudeStatus">Em bom estado</p>
-                    <p class="itemReviw__remaining">Faltam ${faltam} KM</p> 
+                    <p class="itemReviw__mudeStatus" style="color: ${corBarra};">
+                        ${kmVisuais > 0 ? 'Em bom estado' : 'Troca necessária'}
+                    </p>
+                    <p class="itemReviw__remaining" style= "color: ${corBarra};">${mudeStatus} ${kmVisuais} KM</p> 
                 </div>
 
                 <div class="progress-container">
-                    <div class="progress-bar"></div>
+                    <div class="progress-bar" style="width: ${porcentagem}%; color: ${corBarra};"></div>
                 </div>
             </div>
 
@@ -106,5 +125,3 @@ const createItem = (titleValue, intervalValue, lastValue, isImportant, faltam) =
 
     grid.insertAdjacentHTML('beforeend', template);
 };
-
-

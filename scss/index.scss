@@ -185,9 +185,7 @@ main{
     }
 }
 
-
 // itens 
-
 .itemReviw{
     font-family: $font-secundaria;
     width: sizes("content");
@@ -295,7 +293,7 @@ main{
     
 }
 .progress-bar {
-    width: 40%;            /* Altere aqui para controlar a porcentagem */
+    width: 0%;            /* Altere aqui para controlar a porcentagem */
     height: 100%;
     background-color: #10b981; /* Cor verde da imagem */
     border-radius: 50px;
@@ -303,110 +301,111 @@ main{
 }
 }
 
-
 .inputItem{
-    user-select: none;
-    font-family: $font-secundaria;
-    position: absolute;
     @include center(column, center, center, center, .5rem);
+    position: absolute;
     width: sizes("full");
     height: sizes("full");
+    font-family: $font-secundaria;
     background-color: color("shadow");
+    user-select: none;
 
     &__container{
-        width: clamp(20rem, 90%, 70rem);
-        height: 30%;
         @include center(column, center, center, center, .5rem);
         container-type: inline-size;
+        width: clamp(20rem, 90%, 70rem);
+        height: sizes("30%");
     }
 
-    &__card{
-        position: relative;
+    &__card {
         @include center(column, center, center, center, .5rem);
+        position: relative;
+        width: sizes("middle");
+        height: sizes("full");
+        padding: sizes("m");
         background-color: color("white");
-        border-radius: .5rem;
-        width: 50%;
-        height: 100%;
-        padding: 1rem;
+        border-radius: sizes("s");
 
         //? se o container for 50rem fica com 100%
         @container(max-width: 50rem) {
-            width: 100%;
+            width: sizes("full");
         }
-  
     }
 
-    &__header{
+    &__header {
         @include center(row, flex-start, center, center, 1rem);
-        // border: 2px solid blue;
-        width: 100%;
-
+        width: sizes("full");
     }
 
-    &__icon{
-        background-color: color("iconCard-bg");
-        color: color("card-title");
+    &__icon {
+        font-size: clamp(.7rem, 3cqw, 1rem);
         padding: clamp(.6rem, 3cqw, 1rem);
-        font-size:clamp(.7rem, 3cqw, 1rem);
+        color: color("card-title");
+        background-color: color("iconCard-bg");
         border-radius: sizes("s");
     }
 
-    &__titleGroup{
+    &__titleGroup {
         @include center(column, center, flex-start, center, .2rem);
-        // border: 2px solid green;
-        width: 100%;
+        width: sizes("full");
     }
 
-    &__footer{
+    &__footer {
         @include center(row, space-between, center, center, .2rem);
-        width: 100%;
+        width: sizes("full");
     }
 
-    .checkFrequency{
-        margin: 1rem 0 0 0;
-        font-size:clamp(.7rem, 3cqw, 1rem);
-
+    .checkFrequency {
         align-self: flex-start;
+        font-size: clamp(.7rem, 3cqw, 1rem);
+        margin: 1rem 0 0 0;
     }
 
-    #titleItem, #titleInterval, #titleLast{
-        width: 100%;
-        font-size:clamp(.7rem, 4cqw, 1.5rem);
-        padding: 0 .5rem;
-        border-radius: 1rem;
+    #titleItem, #titleInterval, #titleLast {
+        width: sizes("full");
+        font-size: clamp(.7rem, 4cqw, 1.5rem);
+        padding: .1rem .5rem;
         border: 1px solid black;
+        border-radius: sizes("m");
         
-        &:focus{outline: none; background-color: #f3f4f6;}
-        &::placeholder{color: rgba(0, 0, 0, 0.726)}
+        &:focus {
+            background-color: color("focus");
+            outline: none;
+        }
+
+        &::placeholder {
+            color: color("placeholder");
+        }
     }
 
-    #titleInterval{
-        font-size:clamp(.7rem, 3cqw, 1rem);
+    #titleInterval {
+        font-size: clamp(.7rem, 3cqw, 1rem);
 
-
-        &::placeholder{color: rgba(0, 0, 0, 0.466)}
+        &::placeholder {
+            color: color("placeholder");
+        }
     }
 
-    #titleLast{
-        font-size:clamp(.7rem, 3cqw, 1rem);
+    #titleLast {
+        font-size: clamp(.7rem, 3cqw, 1rem);
         
-
-        &::placeholder{color: rgba(0, 0, 0, 0.466)}
+        &::placeholder {
+            color: color("placeholder");
+        }
     }
 
-    &__createItem{        
+    &__createItem {        
         font-size: clamp(.9rem, 3cqw, 1rem);
-        padding: clamp(.6rem, 1cqw, .5rem);
-                background-color: color("cardButton-bg");
-        color: color("cardButton-text");
-        border-radius: sizes("s");
-        border: none;
         font-weight: bolder;
+        padding: clamp(.6rem, 1cqw, .5rem);
+        color: color("cardButton-text");
+        background-color: color("cardButton-bg");
+        border: none;
+        border-radius: sizes("s");
         cursor: pointer;
-
     }
 
-    &__createCancel{
+    &__createCancel {
         position: absolute;
         bottom: 100%;
         left: 94%;
@@ -414,25 +413,22 @@ main{
         height: 2rem;
         margin: .5rem;
         
-        
-        button{
-            border-radius: sizes("middle");;
+        button {
             width: sizes("full");
             height: sizes("full");
-            border: none;
             background-color: red;
+            border: none;
+            border-radius: sizes("middle");
             cursor: pointer;
-
         }
     }
 
-    @media (max-width: 900px){
-
-        &__container{
-        width: sizes("content");
-        height: sizes("20");
-        position: relative;
-        background-color: red;
+    @media (max-width: 900px) {
+        &__container {
+            position: relative;
+            width: sizes("content");
+            height: sizes("20");
+            background-color: red;
         }
     }
 
